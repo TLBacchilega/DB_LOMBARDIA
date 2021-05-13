@@ -27,11 +27,6 @@ library(spatstat)
 # http://rseek.org
 
 
-# https://www.rdocumentation.org/packages/sf/versions/0.9-8/topics/st_coordinates
-# sf::st_coordinates per estrarre le coordinate di ciascun vertice (oggetto classe sf, sfc o sfg)
-# se importate gli shapefile con sf::st_read avrete già la classe corretta 
-# se invece usate un altro pacchetto (e.g. sp o rgdal) dovrete prima convertire l'oggetto nella clase corretta (st_sf o st_as_sf)
-# per le distanze dist o sf::st_distance
 
 
 
@@ -81,6 +76,10 @@ sel_poly
 #2 03012001   AGRA VARESE 10kmE422N254      ALP Esalpica Interna  1
 #                       geometry
 #2 MULTIPOLYGON (((480647.8 50...
+
+
+
+# https://www.rdocumentation.org/packages/sf/versions/0.9-8/topics/st_coordinates
 
 # per estrarre le coordinate 
 st_coordinates(sel_poly)
