@@ -19,6 +19,8 @@ plot(sel_poly)
 install.packages("spatstat")
 library(spatstat)
 
+ 
+
 
 # https://www.rdocumentation.org/packages/spatstat/versions/1.56-1/topics/vertices
 # https://www.rdocumentation.org/packages/spatialEco/versions/1.3-5/topics/extract.vertices
@@ -69,6 +71,17 @@ Lombardia$ID
 sel_poly <- Lombardia[Lombardia$ID == "1", ]
 plot(sel_poly)
 
+sel_poly
+# Simple feature collection with 1 feature and 7 fields
+#Geometry type: MULTIPOLYGON
+#Dimension:     XY
+#Bounding box:  xmin: 480635.6 ymin: 5097223 xmax: 482813.5 ymax: 5099096
+#Projected CRS: WGS 84 / UTM zone 32N
+#    ISTAT COMUNE   PROV        CELLA REG_BIOG          REG_FOR ID
+#2 03012001   AGRA VARESE 10kmE422N254      ALP Esalpica Interna  1
+#                       geometry
+#2 MULTIPOLYGON (((480647.8 50...
+
 # per estrarre le coordinate 
 st_coordinates(sel_poly)
 
@@ -93,7 +106,7 @@ st_distance(sel_poly)
 
 
 
-# reprex
-## https://www.tidyverse.org/help/
+
+
 
 
