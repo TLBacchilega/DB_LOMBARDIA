@@ -32,7 +32,8 @@ library(spatstat)
 
 
 # import data
-install.packages("sf")
+install.packages("sf") # Simple Feature: import, export and manipulate vector data
+# load packages
 library(sf)
 # Linking to GEOS 3.9.0, GDAL 3.2.1, PROJ 7.2.1
 
@@ -94,9 +95,27 @@ dist(sel_poly)
 # 4: In dist(sel_poly) : si è prodotto un NA per coercizione
 # 5: In dist(sel_poly) : si è prodotto un NA per coercizione
 
-st_distance(sel_poly)
+# calculate distance
+st_distance(sel_poly) # distance in meters
 # Units: [m]
 #    [,1]
+# [1,]    0
+
+
+m_distance <- st_distance(sel_poly)
+# matrix
+dim(m_distance)
+# [1] 1 1
+
+# https://www.r-bloggers.com/2020/01/geographic-distance-2/
+install.packages("units") # Support for measurement units in R vectors, matrices and arrays: propagation, conversion, derivation
+library(units)
+
+
+# change from m to km
+set_units(dist_sel_poly, "km")
+# Units: [km]
+#     [,1]
 # [1,]    0
 
 
